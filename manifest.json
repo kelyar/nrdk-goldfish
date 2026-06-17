@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Nerdik Goldfish",
+  "version": "1.0.0",
+  "description": "Highlights MTG cards used in popular decks on nerdik.club",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": [
+    "https://nerdik.club/*",
+    "https://www.mtggoldfish.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://nerdik.club/singels/*",
+        "https://nerdik.club/singles/mtg/*",
+        "https://nerdik.club/mtg/singles/back-in-stock/*"
+      ],
+      "js": ["content/content-script.js"],
+      "css": ["content/content-script.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
