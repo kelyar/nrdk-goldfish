@@ -1,3 +1,3 @@
 # Nrdk Goldfish
 
-Chrome extension that highlights MTG cards used in popular decks
+Chrome extension that highlights MTG staples in shop listings
